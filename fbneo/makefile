@@ -110,7 +110,7 @@ sdl: FORCE
 	@$(MAKE) -s -f makefile.sdl
 
 sdl2: FORCE
-	@$(MAKE) -s -f makefile.sdl2 driverlist.h
+	@$(MAKE) -s -f makefile.sdl2
 
 vc: FORCE
 	@$(MAKE) -s -f makefile.vc
