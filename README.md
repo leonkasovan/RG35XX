@@ -8,6 +8,12 @@ Koriki OS: 1.0 https://github.com/rg35xx-cfw/Koriki/releases
 
 # Binary
 https://github.com/andrew-d/static-binaries/tree/master/binaries/linux/arm  
+```
+/usr/bin/file
+/usr/bin/ld
+/usr/bin/readelf
+/usr/local/share/misc/magic.mgc
+```
 
 # Update Core
 https://boosty.to/xquader  
