@@ -14,6 +14,22 @@ https://github.com/andrew-d/static-binaries/tree/master/binaries/linux/arm
 /usr/local/share/misc/magic.mgc
 ```
 
+# Setting for development
+```shell
+#!/bin/sh
+export PATH="/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/bin:/opt/miyoo/bin:$PATH"
+export CC="/opt/miyoo/bin/arm-miyoo-linux-uclibcgnueabi-gcc"
+export CXX="/opt/miyoo/bin/arm-miyoo-linux-uclibcgnueabi-g++"
+export CROSS_COMPILE="/opt/miyoo/bin/arm-miyoo-linux-uclibcgnueabi-"
+export AR="/opt/miyoo/bin/arm-miyoo-linux-uclibcgnueabi-ar"
+export AS="/opt/miyoo/bin/arm-miyoo-linux-uclibcgnueabi-as"
+export HOST="arm-miyoo-linux-uclibcgnueabi"
+export LD="/opt/miyoo/bin/arm-miyoo-linux-uclibcgnueabi-ld"
+export PREFIX="/opt/miyoo/"
+export PLATFORM="rg35xx"
+cd workspace
+```
+
 # Update Core
 https://boosty.to/xquader  
 
