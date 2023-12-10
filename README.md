@@ -58,9 +58,12 @@ checking sub-depends for 'not found'
 # Build SDL 1.2 in Koriki Dev
 ```shell
 git clone https://github.com/libsdl-org/SDL-1.2.git
-cd SDL-1.2
+git clone -b SDL-1.2 https://github.com/libsdl-org/SDL_ttf.git
+git clone -b SDL-1.2 https://github.com/libsdl-org/SDL_image.git
+cd SDL-1.2 OR SDL_ttf
 ./autogen.sh
 ./configure --host=x86_64-pc-linux-gnu --prefix=/opt/rg35xx/arm-buildroot-linux-gnueabihf/sysroot/usr
+./configure --host=x86_64-pc-linux-gnu
 make
 make install
 ```
