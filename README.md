@@ -61,6 +61,7 @@ git clone https://github.com/libsdl-org/SDL-1.2.git
 cd SDL-1.2
 ./autogen.sh
 ./configure --host=x86_64-pc-linux-gnu --prefix=/opt/rg35xx/arm-buildroot-linux-gnueabihf/sysroot/usr
+chmod a+w sdl.pc
 nano sdl.pc (LINE 3 => prefix=/usr)
 make
 make install
@@ -69,6 +70,7 @@ git clone -b SDL-1.2 https://github.com/libsdl-org/SDL_ttf.git
 cd SDL_ttf
 ./autogen.sh
 ./configure --host=x86_64-pc-linux-gnu --prefix=/opt/rg35xx/arm-buildroot-linux-gnueabihf/sysroot/usr
+chmod a+w SDL_ttf.pc
 nano SDL_ttf.pc (LINE 3 => prefix=/usr)
 make
 make install
@@ -77,6 +79,7 @@ git clone -b SDL-1.2 https://github.com/libsdl-org/SDL_image.git
 cd SDL_image
 ./autogen.sh
 ./configure --host=x86_64-pc-linux-gnu --prefix=/opt/rg35xx/arm-buildroot-linux-gnueabihf/sysroot/usr
+chmod a+w SDL_image.pc
 nano SDL_image.pc (LINE 3 => prefix=/usr)
 make
 make install
