@@ -60,7 +60,7 @@ checking sub-depends for 'not found'
 git clone https://github.com/libsdl-org/SDL-1.2.git
 cd SDL-1.2
 ./autogen.sh
-./configure --host x86_64-pc-linux-gnu
+./configure --host=x86_64-pc-linux-gnu --prefix=/opt/rg35xx/arm-buildroot-linux-gnueabihf/sysroot/usr
 make
 make install
 ```
