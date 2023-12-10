@@ -54,3 +54,13 @@ checking sub-depends for 'not found'
         libc.so.0 => /lib//libc.so.0 (0xb6e74000)
         ld-uClibc.so.1 => /lib/ld-uClibc.so.0 (0xb6f41000)
 ```
+
+# Build SDL 1.2 in Koriki Dev
+```shell
+git clone https://github.com/libsdl-org/SDL-1.2.git
+cd SDL-1.2
+./autogen.sh
+./configure --host x86_64-pc-linux-gnu
+make
+make install
+```
