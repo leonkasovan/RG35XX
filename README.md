@@ -85,3 +85,9 @@ make
 make install
 
 ```
+
+# HACK
+```
+enable write for StockOS mount -o remount,rw /dev/block/actc /system
+/system/appres/bin/switch_os.sh
+```
