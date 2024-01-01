@@ -102,17 +102,16 @@ adb shell
 inside adb shell:
 
 ```
-mount -o remount,rw /system
-cd /system
+cd /mnt/data/
 busybox tar -xf /mnt/mmc/rootfs.tar.gz
 ```
 
 Start chroot
 
 ```
-mount -o bind /dev /system/root/dev
-mount -o bind /proc /system/root/proc
-busybox chroot /system/root /bin/bash
+mount -o bind /dev /mnt/data/root/dev
+mount -o bind /proc /mnt/data/root/proc
+busybox chroot /mnt/data/root /bin/bash
 export PATH=/bin:/usr/bin
 ```
 
