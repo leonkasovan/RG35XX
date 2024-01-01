@@ -91,3 +91,58 @@ make install
 enable write for StockOS mount -o remount,rw /dev/block/actc /system
 /system/appres/bin/switch_os.sh
 ```
+
+# Fix ADB in Stock OS
+Download:
+https://www.dropbox.com/scl/fi/336v1carp3aqm0bu92j80/rootfs.tar.gz?rlkey=5hnr6a7qdzcuttopvc0a4yvif&dl=0
+```
+adb push rootfs.tar.gz /mnt/mmc
+adb shell
+```
+inside adb shell:
+
+```
+mount -o remount,rw /system
+cd /system
+busybox tar -xf /mnt/mmc/rootfs.tar.gz
+```
+
+Start chroot
+
+```
+mount -o bind /dev /system/root/dev
+mount -o bind /proc /system/root/proc
+busybox chroot /system/root /bin/bash
+export PATH=/bin:/usr/bin
+```
+
+
+## Building rootfs
+
+create this file:
+```
+[General]
+cleanup=true
+noauth=false
+unpack=true
+bootstrap=Debian
+aptsources=Debian
+
+[Debian]
+packages=kmod dbus
+packages=nano dosfstools psmisc binutils
+source=http://deb.debian.org/debian
+keyring=debian-archive-keyring
+suite=stable
+components=main contrib non-free
+```
+
+Add or remove packages that you want (see `packages=`)
+
+```
+apt-get install multistrap
+multistrap -a armhf -d $PWD/root -f multistrap.conf
+tar -zcf rootfs.tar.gz root 
+```
+
+
