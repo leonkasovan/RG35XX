@@ -5,7 +5,7 @@ Knowledge for RG35XX Anbernic Device
 Anbernic Stock: Dual OS https://win.anbernic.com/download/270.html  
 Garlic OS: 1.4.9 https://www.patreon.com/posts/76561333  
 Koriki OS: 1.0 https://github.com/rg35xx-cfw/Koriki/releases  
-Recalbox OS: 9.1 https://github.com/leonkasovan/RG35XX/wiki  
+
 
 # Binary
 https://github.com/andrew-d/static-binaries/tree/master/binaries/linux/arm  
