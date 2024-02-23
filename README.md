@@ -14,8 +14,19 @@ https://github.com/andrew-d/static-binaries/tree/master/binaries/linux/arm
 /usr/bin/file
 /usr/local/share/misc/magic.mgc
 ```
+# Setting toolchain for Koriki 
+```shell
+cd /opt
+wget https://github.com/rg35xx-cfw/Koriki/releases/download/koriki_batocera_rg35xx_sdk_20240208/arm-buildroot-linux-gnueabihf_sdk-buildroot.tar.gz
+sudo tar -xvzf arm-buildroot-linux-gnueabihf_sdk-buildroot.tar.gz
 
-# Setting for development
+# set PATH for aarch64 cross compiler
+PATH="/opt/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin:/opt/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/bin:/opt/host/bin:/opt/host/aarch64-buildroot-linux-gnu/sysroot/usr/bin:$PATH"
+# custom library needed by compiler
+export LD_LIBRARY_PATH="/opt/host/lib:/opt/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib"
+```
+
+# Setting toolchain Garlic
 ```shell
 #!/bin/sh
 export PATH="/opt/miyoo/arm-miyoo-linux-uclibcgnueabi/sysroot/usr/bin:/opt/miyoo/bin:$PATH"
