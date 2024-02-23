@@ -19,11 +19,17 @@ https://github.com/andrew-d/static-binaries/tree/master/binaries/linux/arm
 cd /opt
 wget https://github.com/rg35xx-cfw/Koriki/releases/download/koriki_batocera_rg35xx_sdk_20240208/arm-buildroot-linux-gnueabihf_sdk-buildroot.tar.gz
 sudo tar -xvzf arm-buildroot-linux-gnueabihf_sdk-buildroot.tar.gz
+source start_koriki_toolchain.sh
+```
 
-# set PATH for aarch64 cross compiler
-PATH="/opt/arm-buildroot-linux-gnueabihf_sdk-buildroot/bin:/opt/arm-buildroot-linux-gnueabihf_sdk-buildroot/arm-buildroot-linux-gnueabihf/sysroot/usr/bin:/opt/host/bin:/opt/host/aarch64-buildroot-linux-gnu/sysroot/usr/bin:$PATH"
-# custom library needed by compiler
-export LD_LIBRARY_PATH="/opt/host/lib:/opt/arm-buildroot-linux-gnueabihf_sdk-buildroot/lib"
+`nano start_koriki_toolchain.sh`
+```
+# set env variable for cross compiler
+export CC=arm-buildroot-linux-gnueabihf-gcc
+export CXX=arm-buildroot-linux-gnueabihf-g++
+export CMAKE_C_FLAGS="-s -Os -marm -march=armv7-a -mtune=cortex-a9 -mfpu=neon-fp16 -mfloat-abi=hard"
+export PATH="/opt/koriki_toolchain/bin:/opt/koiriki_toolchain/arm-buildroot-linux-gnueabihf/sysroot/usr/bin:$PATH"
+# export LD_LIBRARY_PATH="/opt/koriki_toolchain/lib"
 ```
 
 # Setting toolchain Garlic
